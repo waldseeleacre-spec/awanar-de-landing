@@ -12,7 +12,7 @@ export class BlockTimbauba {
 
   constructor(parent: HTMLElement) {
     this.container = document.createElement('section');
-    this.container.className = 'timbauba-section relative py-16 sm:py-20 lg:py-24 overflow-hidden';
+    this.container.className = 'timbauba-section relative py-6 sm:py-8 lg:py-10 overflow-hidden';
     this.container.id = 'timbauba';
     
     parent.appendChild(this.container);
@@ -44,7 +44,7 @@ export class BlockTimbauba {
       <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         
         <!-- Header -->
-        <div class="text-center mb-8 lg:mb-12 opacity-0 translate-y-4 animate-fade-in">
+        <div class="text-center mb-3 lg:mb-4 opacity-0 translate-y-4 animate-fade-in">
           <div class="mb-4 flex items-center justify-center gap-3">
             <span class="w-12 h-px bg-[#C6A85B]/30"></span>
             <span class="text-[#C6A85B] text-xs uppercase tracking-[0.3em] font-medium">${eyebrow}</span>
@@ -102,10 +102,10 @@ export class BlockTimbauba {
               <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
                 <!-- Foto perfil -->
                 <div class="relative flex-shrink-0">
-                  <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#C6A85B]/30 shadow-[0_0_20px_rgba(198,168,91,0.15)]">
+                  <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#C6A85B]/30 shadow-[0_0_25px_rgba(198,168,91,0.25)]">
                     <img 
-                      src="/images/paka_01.webp" 
-                      alt="Paká Kamanawa" 
+                      src="/images/paka-kamanawa.webp" 
+                      alt="Paká Kamanawa – Dorfchef der Aldeia Timbaúba" 
                       class="w-full h-full object-cover"
                       loading="lazy"
                       width="128"
@@ -135,10 +135,10 @@ export class BlockTimbauba {
               <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
                 <!-- Foto perfil -->
                 <div class="relative flex-shrink-0">
-                  <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-[#C6A85B]/20">
+                  <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#C6A85B]/30 shadow-[0_0_25px_rgba(198,168,91,0.25)]">
                     <img 
-                      src="/images/rura_01.webp" 
-                      alt="Rurá Varinawá" 
+                      src="/images/rura-varinawa.webp" 
+                      alt="Rurá Varinawá – Künstlerin und Hüterin der Gesänge" 
                       class="w-full h-full object-cover"
                       loading="lazy"
                       width="128"
