@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2f1a"/>
+      <stop offset="60%" style="stop-color:#0d1a0d"/>
+      <stop offset="100%" style="stop-color:#050a05"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a962;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#c9a962;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Base floresta -->
+  <rect width="800" height="1000" fill="url(#forestGrad)"/>
+  
+  <!-- Silhuetas de árvores - padrão minimalista -->
+  <g fill="#0a150a" opacity="0.6">
+    <path d="M50,1000 L50,600 Q80,550 100,600 L100,1000 Z"/>
+    <path d="M120,1000 L120,500 Q150,450 180,500 L180,1000 Z"/>
+    <path d="M200,1000 L200,650 Q220,600 250,650 L250,1000 Z"/>
+    <path d="M300,1000 L300,450 Q340,380 380,450 L380,1000 Z"/>
+    <path d="M420,1000 L420,550 Q450,500 480,550 L480,1000 Z"/>
+    <path d="M520,1000 L520,400 Q560,320 600,400 L600,1000 Z"/>
+    <path d="M650,1000 L650,580 Q680,530 700,580 L700,1000 Z"/>
+    <path d="M720,1000 L720,480 Q750,430 780,480 L780,1000 Z"/>
+  </g>
+  
+  <!-- Camadas de árvores mais próximas -->
+  <g fill="#050a05" opacity="0.8">
+    <path d="M-20,1000 L-20,700 Q30,620 80,700 L80,1000 Z"/>
+    <path d="M150,1000 L150,750 Q200,680 250,750 L250,1000 Z"/>
+    <path d="M350,1000 L350,680 Q420,580 490,680 L490,1000 Z"/>
+    <path d="M550,1000 L550,720 Q620,640 690,720 L690,1000 Z"/>
+    <path d="M720,1000 L720,780 Q780,700 820,780 L820,1000 Z"/>
+  </g>
+  
+  <!-- Raios de luz dourada sutis -->
+  <g opacity="0.08">
+    <polygon fill="#c9a962" points="400,0 200,1000 300,1000"/>
+    <polygon fill="#c9a962" points="400,0 500,1000 600,1000"/>
+  </g>
+  
+  <!-- Névoa suave -->
+  <rect x="0" y="400" width="800" height="600" fill="url(#mist)"/>
+  
+  <!-- Grafismo ancestral sutil - linhas onduladas -->
+  <g stroke="#c9a962" fill="none" stroke-width="1" opacity="0.15">
+    <path d="M0,850 Q200,800 400,850 T800,850" />
+    <path d="M0,880 Q200,830 400,880 T800,880" />
+    <path d="M0,910 Q200,860 400,910 T800,910" />
+    <circle cx="100" cy="865" r="3" fill="#c9a962" stroke="none"/>
+    <circle cx="400" cy="850" r="3" fill="#c9a962" stroke="none"/>
+    <circle cx="700" cy="865" r="3" fill="#c9a962" stroke="none"/>
+  </g>
+</svg>
