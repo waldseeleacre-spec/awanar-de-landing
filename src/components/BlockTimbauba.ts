@@ -42,17 +42,6 @@ export class BlockTimbauba {
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        
-        <!-- Header -->
-        <div class="text-center mb-3 lg:mb-4 opacity-0 translate-y-4 animate-fade-in">
-          <div class="mb-4 flex items-center justify-center gap-3">
-            <span class="w-12 h-px bg-[#C6A85B]/30"></span>
-            <span class="text-[#C6A85B] text-xs uppercase tracking-[0.3em] font-medium">${eyebrow}</span>
-            <span class="w-12 h-px bg-[#C6A85B]/30"></span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light text-[#E8E6E1] mb-6 tracking-tight">${title}</h2>
-          <p class="text-[#E8E6E1]/60 font-light max-w-2xl mx-auto leading-relaxed text-base sm:text-lg">${intro}</p>
-        </div>
 
         <!-- Texto Aldeia Timbaúba (Alemão Formal) -->
         <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16 opacity-0 translate-y-4 animate-fade-in" style="animation-delay: 80ms; animation-fill-mode: forwards;">
