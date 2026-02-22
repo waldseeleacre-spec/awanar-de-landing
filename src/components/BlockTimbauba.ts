@@ -74,12 +74,13 @@ export class BlockTimbauba {
               <div class="aspect-[4/3]">
                 <img
                   src="${src}"
-                  alt="Aldeia Timbaúba – Rio Gregório, Acre"
+                  alt="${imageAlt}"
                   class="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
+              <div class="pt-2 text-[12px] tracking-wide text-white/45">${caption}</div>
             </div>
           `).join('')}
         </div>

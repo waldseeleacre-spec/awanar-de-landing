@@ -123,6 +123,21 @@ export const pt: Translations = {
     quote: 'Não vendemos conforto. Oferecemos cuidado.',
     cta: 'Quero reservar minha vaga',
   },
+  block7: {
+    eyebrow: 'A Ponte',
+    title: 'Quem recebe você na floresta',
+    paragraph1: 'A verdadeira viagem não começa no barco — começa quando você entende onde está pisando e com quem está caminhando.',
+    paragraph2: 'Patricia é sua companheira nessa travessia: presença, escuta e cuidado para que você chegue com clareza e confiança.',
+    paragraph3: 'Fluente em alemão, inglês e português, Patricia traduz com sensibilidade — para que nada se perca no caminho.',
+    quote: 'Onde existe uma ponte, existe paz.',
+    bullets: [
+      'Acolhimento no seu idioma (DE / EN / PT)',
+      'Orientação clara antes da viagem',
+      'Presença e cuidado em cada passo',
+    ],
+    cta: 'Conhecer Patricia',
+    footer: 'Acompanhamento multilíngue. Comunicação direta. Sem mal-entendidos.',
+  },
   timbauba: {
     eyebrow: 'O Lugar',
     title: 'Aldeia Timbaúba',
