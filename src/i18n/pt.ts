@@ -209,6 +209,18 @@ export const pt: Translations = {
     cta: 'INICIE SUA TRAVESSIA',
     ctaNote: 'Sem spam. Sem pressão. Apenas alinhamento.',
   },
+  pacto: {
+    kicker: 'PRÓXIMO PASSO',
+    title: 'O Pacto',
+    line1: 'Preencha para iniciarmos a conversa com cuidado.',
+    name: 'Nome',
+    email: 'E-mail',
+    phone: 'Telefone/WhatsApp',
+    country: 'País',
+    message: 'Mensagem',
+    send: 'ENVIAR',
+    note: 'Sem spam. Sem pressão. Retornamos em breve.',
+  },
   nav: {
     language: 'Idioma',
   },

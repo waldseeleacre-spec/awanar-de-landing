@@ -10,6 +10,7 @@ import { Block8 } from './components/Block8';
 import { BlockTimbauba } from './components/BlockTimbauba';
 import { SicherheitRespekt } from './components/SicherheitRespekt';
 import { FaqSection } from './components/FaqSection';
+import { PactoSection } from './components/PactoSection';
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,4 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Create FAQ Section
   new FaqSection(app);
+  
+  // Create Pacto Section (Form)
+  new PactoSection(app);
 });

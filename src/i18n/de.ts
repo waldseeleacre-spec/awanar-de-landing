@@ -207,6 +207,18 @@ export const de = {
     cta: 'BEGINNEN SIE IHRE REISE',
     ctaNote: 'Kein Spam. Kein Druck. Nur Abstimmung.',
   },
+  pacto: {
+    kicker: 'NÄCHSTER SCHRITT',
+    title: 'O Pacto',
+    line1: 'Füllen Sie das Formular aus, damit wir das Gespräch mit Sorgfalt beginnen können.',
+    name: 'Name',
+    email: 'E-Mail',
+    phone: 'Telefon/WhatsApp',
+    country: 'Land',
+    message: 'Nachricht',
+    send: 'SENDEN',
+    note: 'Kein Spam. Kein Druck. Wir melden uns bald.',
+  },
   nav: {
     language: 'Sprache',
   },
