@@ -8,6 +8,8 @@ import { Block6 } from './components/Block6';
 import { Block7 } from './components/Block7';
 import { Block8 } from './components/Block8';
 import { BlockTimbauba } from './components/BlockTimbauba';
+import { SicherheitRespekt } from './components/SicherheitRespekt';
+import { FaqSection } from './components/FaqSection';
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,6 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Create Block Timbauba: Aldeia e Lideranças
   new BlockTimbauba(app);
   
+  // Create Sicherheit & Respekt section
+  new SicherheitRespekt(app);
+  
   // Create Block 8: Testimonials / Erfahrungen
   new Block8(app);
+  
+  // Create FAQ Section
+  new FaqSection(app);
 });
