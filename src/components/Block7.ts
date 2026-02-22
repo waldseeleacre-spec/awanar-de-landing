@@ -5,7 +5,7 @@ export class Block7 {
 
   constructor(parent: HTMLElement) {
     this.container = document.createElement('section');
-    this.container.className = 'block7-section relative py-20 sm:py-24 lg:py-32 overflow-hidden';
+    this.container.className = 'block7-section relative py-12 sm:py-16 lg:py-20 overflow-hidden';
     this.container.id = 'block7';
     
     parent.appendChild(this.container);
@@ -43,7 +43,7 @@ export class Block7 {
       <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
         
         <!-- Header -->
-        <div class="text-center mb-16 sm:mb-20">
+        <div class="text-center mb-8 sm:mb-10">
           <!-- Eyebrow -->
           <div class="mb-4 flex items-center justify-center gap-3">
             <span class="w-8 h-px bg-[#C6A85B]/40"></span>
