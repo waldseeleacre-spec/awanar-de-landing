@@ -1,8 +1,11 @@
 import { i18n } from '../i18n';
 
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
+
 export class PactoSection {
   private container: HTMLElement;
-  private submitted: boolean = false;
+  private submitStatus: SubmitStatus = 'idle';
+  private errorMessage: string = '';
 
   constructor(parent: HTMLElement) {
     this.container = document.createElement('section');
@@ -16,10 +19,13 @@ export class PactoSection {
   }
 
   private render(): void {
-    if (this.submitted) {
+    if (this.submitStatus === 'success') {
       this.renderSuccess();
       return;
     }
+
+    const isSubmitting = this.submitStatus === 'submitting';
+    const isError = this.submitStatus === 'error';
 
     this.container.innerHTML = `
       <!-- Fundo preto -->
@@ -64,7 +70,8 @@ export class PactoSection {
                 name="name"
                 required
                 autocomplete="name"
-                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors"
+                ${isSubmitting ? 'disabled' : ''}
+                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors disabled:opacity-50"
                 placeholder=""
               />
             </div>
@@ -80,7 +87,8 @@ export class PactoSection {
                 name="email"
                 required
                 autocomplete="email"
-                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors"
+                ${isSubmitting ? 'disabled' : ''}
+                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors disabled:opacity-50"
                 placeholder=""
               />
             </div>
@@ -95,7 +103,8 @@ export class PactoSection {
                 id="pacto-phone" 
                 name="phone"
                 autocomplete="tel"
-                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors"
+                ${isSubmitting ? 'disabled' : ''}
+                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors disabled:opacity-50"
                 placeholder=""
               />
             </div>
@@ -110,7 +119,8 @@ export class PactoSection {
                 id="pacto-country" 
                 name="country"
                 autocomplete="country-name"
-                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors"
+                ${isSubmitting ? 'disabled' : ''}
+                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors disabled:opacity-50"
                 placeholder=""
               />
             </div>
@@ -124,7 +134,8 @@ export class PactoSection {
                 id="pacto-message" 
                 name="message"
                 rows="4"
-                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors resize-none"
+                ${isSubmitting ? 'disabled' : ''}
+                class="w-full bg-transparent border-b-2 border-[#C6A85B]/30 py-3 text-[#E8E6E1] font-light placeholder-[#E8E6E1]/30 focus:outline-none focus:border-[#C6A85B]/60 transition-colors resize-none disabled:opacity-50"
                 placeholder=""
               ></textarea>
             </div>
@@ -133,14 +144,29 @@ export class PactoSection {
             <div class="pt-4">
               <button 
                 type="submit"
-                class="group w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#C6A85B]/10 border-2 border-[#C6A85B]/30 rounded-full text-[#C6A85B] text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-[#C6A85B]/20 hover:border-[#C6A85B]/50 hover:shadow-[0_0_30px_rgba(198,168,91,0.15)]"
+                ${isSubmitting ? 'disabled' : ''}
+                class="group w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#C6A85B]/10 border-2 border-[#C6A85B]/30 rounded-full text-[#C6A85B] text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-[#C6A85B]/20 hover:border-[#C6A85B]/50 hover:shadow-[0_0_30px_rgba(198,168,91,0.15)] disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                ${i18n.t('pacto.send')}
+                ${isSubmitting 
+                  ? (i18n.lang === 'de' ? 'Wird gesendet...' : 'Enviando...')
+                  : i18n.t('pacto.send')
+                }
+                ${!isSubmitting ? `
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
+                ` : ''}
               </button>
             </div>
+
+            <!-- Mensagem de erro -->
+            ${isError ? `
+            <div class="text-center">
+              <p class="text-red-400/80 text-sm font-light">
+                ${this.errorMessage || (i18n.lang === 'de' ? 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.' : 'Ocorreu um erro. Por favor, tente novamente.')}
+              </p>
+            </div>
+            ` : ''}
             
           </form>
           
@@ -160,6 +186,10 @@ export class PactoSection {
   }
 
   private renderSuccess(): void {
+    const successMessage = i18n.lang === 'de' 
+      ? 'Deine Nachricht ist bei uns angekommen 🌿 Wir melden uns in den nächsten Tagen persönlich.'
+      : 'Mensagem enviada 🌿 Em breve entraremos em contato.';
+
     this.container.innerHTML = `
       <!-- Fundo preto -->
       <div class="absolute inset-0 bg-[#050505]"></div>
@@ -177,8 +207,8 @@ export class PactoSection {
           <h3 class="text-2xl sm:text-3xl font-serif text-[#E8E6E1] mb-4">
             ${i18n.t('pacto.title')}
           </h3>
-          <p class="text-[#E8E6E1]/70 font-light">
-            ${i18n.lang === 'de' ? 'Vielen Dank. Wir melden uns in Kürze bei Ihnen.' : 'Obrigado. Entraremos em contato em breve.'}
+          <p class="text-[#E8E6E1]/80 font-light text-lg leading-relaxed">
+            ${successMessage}
           </p>
         </div>
       </div>
@@ -189,15 +219,55 @@ export class PactoSection {
   }
 
   private attachEventListeners(): void {
-    const form = this.container.querySelector('#pacto-form');
+    const form = this.container.querySelector('#pacto-form') as HTMLFormElement;
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // TODO: Integrate with backend API (e.g., /api/contact or Resend/Worker)
-        // For now, show success state
-        this.submitted = true;
-        this.render();
+        await this.handleSubmit(form);
       });
     }
+  }
+
+  private async handleSubmit(form: HTMLFormElement): Promise<void> {
+    this.submitStatus = 'submitting';
+    this.errorMessage = '';
+    this.render();
+
+    try {
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        country: formData.get('country') as string || undefined,
+        interests: ['Immersion'], // Valor padrão conforme esperado pelo Worker
+        message: formData.get('message') as string || undefined,
+      };
+
+      const response = await fetch('https://calm-paper-40f2.seliassousa.workers.dev/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.ok) {
+          this.submitStatus = 'success';
+          form.reset();
+        } else {
+          throw new Error('Server returned error');
+        }
+      } else {
+        throw new Error(`HTTP ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      this.submitStatus = 'error';
+      this.errorMessage = '';
+    }
+
+    this.render();
   }
 }

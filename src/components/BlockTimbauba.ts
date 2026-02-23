@@ -22,9 +22,6 @@ export class BlockTimbauba {
   }
 
   private render(): void {
-    const eyebrow = i18n.t('timbauba.eyebrow');
-    const title = i18n.t('timbauba.title');
-    const intro = i18n.t('timbauba.intro');
     const pakaName = i18n.t('timbauba.paka.name');
     const pakaBio = i18n.t('timbauba.paka.bio');
     const ruraName = i18n.t('timbauba.rura.name');

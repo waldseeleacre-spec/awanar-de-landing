@@ -10,9 +10,17 @@ const translations: Record<Language, Translations> = {
   pt,
 };
 
+const STORAGE_KEY = 'awanar-lang';
+
 class I18n {
-  private currentLang: Language = 'de';
+  private currentLang: Language;
   private listeners: ((lang: Language) => void)[] = [];
+
+  constructor() {
+    // Load saved language or default to 'de'
+    const saved = typeof localStorage !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    this.currentLang = (saved === 'pt' || saved === 'de') ? saved : 'de';
+  }
 
   get lang(): Language {
     return this.currentLang;
@@ -20,17 +28,35 @@ class I18n {
 
   set lang(lang: Language) {
     this.currentLang = lang;
+    // Persist to localStorage
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+    // Notify all listeners
     this.listeners.forEach(cb => cb(lang));
   }
 
   t(key: string): string {
     const keys = key.split('.');
+    // Try current language first
     let value: unknown = translations[this.currentLang];
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
+        // Fallback to 'de' if key not found in current language
+        if (this.currentLang !== 'de') {
+          let fallbackValue: unknown = translations['de'];
+          for (const fk of keys) {
+            if (fallbackValue && typeof fallbackValue === 'object' && fk in fallbackValue) {
+              fallbackValue = (fallbackValue as Record<string, unknown>)[fk];
+            } else {
+              return key;
+            }
+          }
+          return typeof fallbackValue === 'string' ? fallbackValue : key;
+        }
         return key;
       }
     }
