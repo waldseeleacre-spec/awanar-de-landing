@@ -1,36 +1,22 @@
 import { i18n } from '../i18n';
 
-// Testemunhos em DE — NÃO ALTERAR (conforme requisito)
+// Testemunhos em DE — copy oficial (atualizado em 08/03/2026)
 const testimonials = [
   {
     name: 'Tom .',
-    text: `Wir durften eine wundervolle Woche mit der Ahom Retreat Gruppe in der Aldeia Timbauba verbringen.
-Ein besonderes Dankeschön geht an Patricia, die uns den Zugang ermöglicht und sich mit so viel Hingabe um all unsere Anliegen gekümmert hat🫶
-
-Für mich war es eine magische Erfahrung. Das Dorf, seine Bewohner und ihre tiefe Verbundenheit mit der Natur haben mich zutiefst berührt. Die Demut, das Miteinander und Füreinander waren eine unvergleichlich heilende Erfahrung.
-
-Ich lege einen Besuch bei den Noke Koi in der Aldeia jedem ans Herz, der bereits etwas Erfahrung mit Pflanzenmedizin gesammelt hat. 
-Ahuuu ✨🌿`,
+    text: `Wunderbare Woche mit Ahom Retreat. Patricia hat alles mit Hingabe begleitet. Magische Erfahrung – tief verbunden mit Dorf und Natur.`,
   },
   {
     name: 'Patrick',
-    text: `Ich durfte eine Woche mit Patricia, Elias und Gabriela in der Aldeia Timbaúba bei den Noke Koi verbringen.
-
-„Noke Koi" bedeutet übersetzt „die wirklichen Menschen". Ihre tiefe Verbundenheit mit dem Amazonas, mit ihren Mitmenschen und mit ihren Gefühlen war für mich – selbst ein eher kopflastiger Mensch – deutlich spürbar und hat mich tief bewegt.
-
-Diese Woche war eine unglaublich intensive, herzöffnende und magische Erfahrung, die mich gelehrt hat, wie viel Schönheit, Verbindung und Gefühl im Einfachen liegen kann.
-
-Mein besonderer Dank gilt Patricia, Elias und Gabriela. Sie haben nicht nur diese lebensverändernde Woche möglich gemacht, sondern waren in dieser Zeit auch mit so viel positiver Energie und Hingabe an meiner Seite.`,
+    text: `„Noke Koî" – die wirklichen Menschen. Intensive, herzöffnende und magische Erfahrung. Patricia, Elias und Gabriela haben diese Woche möglich gemacht.`,
   },
   {
     name: 'Angesa',
-    text: `Eine Woche bei den Noke Koi in Aldeia Timbaúba zu verbringen, war eines der absoluten Highlights meines Lebens. Die Zeremonien mit Ayahuasca haben mir Türen geöffnet, von denen ich nicht wusste, dass sie existieren, getragen von der Kraft der Natur, den Menschen dort und ihrer Fähigkeit, das Leben als Geschenk zu sehen.
-Doch all das wäre ohne Patrizia nicht möglich gewesen. Mit ihrer Liebe, Hingabe und ihrem offenen Herzens hat sie jeden Moment so gestaltet, dass man sich von der ersten Sekunde an sicher, geborgen und willkommen fühlt. Sie ist das Bindeglied zwischen Welten und macht diese Reise zu dem, was sie ist: mehr als nur ein Aufenthalt im Dschungel – ein Geschenk, eine Transformation, ein Heimkommen.
-Und für mich ganz persönlich: ich habe in ihr eine Soul Sister fürs Leben gefunden. Diese Erfahrung und dieses Gefühl würde ich gegen nichts auf dieser Erde eintauschen.`,
+    text: `Ayahuasca-Zeremonien öffneten Türen in mir. Patricia war die Brücke zwischen Welten. Heimkehr, Transformation, Seelenschwester fürs Leben.`,
   },
   {
     name: 'Joern',
-    text: `Hi Patricia, hoffe du bist wieder gut in Rio angekommen. Ich wollte einfach mal ein paar Minuten Zeit nehmen und mich bei dir bedanken. Danke fuer die Organization. Danke fuer die gemeinsame Zeit. Und danke fuer die wundervolle Reise, die wir alle zusammen hatten. Es war wirklich eine sehr transformierende Woche mit toller Energie und wunderbaren Menschen!! Bewunderswert was du/ihr auf die Beine gestellt habt und ich glaube fest daran, dass es viele Leben zum positiven veraendern wird. Sending lots of love and good energy to Brazil!! Hoffentlich bis ganz bald!`,
+    text: `Danke für die Organisation und die wunderbare gemeinsame Zeit. Transformierende Woche mit schöner Energie und großartigen Menschen.`,
   },
 ];
 

@@ -45,11 +45,10 @@ export class BlockTimbauba {
           <p class="text-sm tracking-[0.3em] uppercase text-white/50 mb-4">NOKE KOÎ – KAMANAWA</p>
           <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Aldeia Timbaúba – Rio Gregório</h2>
           <p class="text-white/70 leading-relaxed text-base md:text-lg">
-            Die Aldeia Timbaúba ist ein lebendiges Territorium am Ufer des Rio Gregório im brasilianischen Bundesstaat Acre. 
-            Ein Ort, an dem der Wald lehrt, die Gemeinschaft gemeinsam wirkt und der Gesang den Weg weist.
+            Ein lebendiges Territorium am Ufer des Rio Gregório, Brasilien. Der Wald lehrt, die Gemeinschaft handelt gemeinsam, der Gesang zeigt den Weg.
           </p>
           <p class="text-white/70 leading-relaxed text-base md:text-lg mt-4">
-            Unter der Führung von Häuptling Paká Kamanawa bewahrt das Dorf seine tief verwurzelten Traditionen und öffnet zugleich respektvolle Lernräume für Menschen, die mit Achtsamkeit und offenem Herzen ankommen.
+            Unter der Führung von Häuptling Paká Kamanawa bewahrt die Aldeia ihre tief verwurzelten Traditionen und öffnet respektvolle Lernräume für Menschen mit Aufmerksamkeit und offenem Herzen.
           </p>
         </div>
 

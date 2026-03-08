@@ -1,11 +1,13 @@
 import { de } from './de';
+import { en } from './en';
 import { pt } from './pt';
 import type { Translations } from './de';
 
 export type { Translations };
-export type Language = 'de' | 'pt';
+export type Language = 'en' | 'de' | 'pt';
 
 const translations: Record<Language, Translations> = {
+  en,
   de,
   pt,
 };
@@ -17,9 +19,9 @@ class I18n {
   private listeners: ((lang: Language) => void)[] = [];
 
   constructor() {
-    // Load saved language or default to 'de'
+    // Load saved language or default to 'en'
     const saved = typeof localStorage !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
-    this.currentLang = (saved === 'pt' || saved === 'de') ? saved : 'de';
+    this.currentLang = (saved === 'en' || saved === 'de' || saved === 'pt') ? saved : 'en';
   }
 
   get lang(): Language {
@@ -40,14 +42,14 @@ class I18n {
     const keys = key.split('.');
     // Try current language first
     let value: unknown = translations[this.currentLang];
-    
+
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
-        // Fallback to 'de' if key not found in current language
-        if (this.currentLang !== 'de') {
-          let fallbackValue: unknown = translations['de'];
+        // Fallback to 'en' if key not found in current language
+        if (this.currentLang !== 'en') {
+          let fallbackValue: unknown = translations['en'];
           for (const fk of keys) {
             if (fallbackValue && typeof fallbackValue === 'object' && fk in fallbackValue) {
               fallbackValue = (fallbackValue as Record<string, unknown>)[fk];
@@ -60,7 +62,7 @@ class I18n {
         return key;
       }
     }
-    
+
     return typeof value === 'string' ? value : key;
   }
 
@@ -68,7 +70,7 @@ class I18n {
   tArray(key: string): string[] {
     const keys = key.split('.');
     let value: unknown = translations[this.currentLang];
-    
+
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
         value = (value as Record<string, unknown>)[k];
@@ -76,7 +78,7 @@ class I18n {
         return [];
       }
     }
-    
+
     return Array.isArray(value) ? value : [];
   }
 

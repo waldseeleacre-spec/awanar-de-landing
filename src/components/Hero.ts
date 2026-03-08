@@ -75,15 +75,22 @@ export class Hero {
         
         <!-- Language Toggle -->
         <div class="flex items-center gap-2" role="group" aria-label="${i18n.t('nav.language')}">
-          <button 
-            class="lang-toggle ${lang === 'de' ? 'active' : ''}" 
+          <button
+            class="lang-toggle ${lang === 'en' ? 'active' : ''}"
+            data-lang="en"
+            aria-pressed="${lang === 'en'}"
+          >
+            EN
+          </button>
+          <button
+            class="lang-toggle ${lang === 'de' ? 'active' : ''}"
             data-lang="de"
             aria-pressed="${lang === 'de'}"
           >
             DE
           </button>
-          <button 
-            class="lang-toggle ${lang === 'pt' ? 'active' : ''}" 
+          <button
+            class="lang-toggle ${lang === 'pt' ? 'active' : ''}"
             data-lang="pt"
             aria-pressed="${lang === 'pt'}"
           >
