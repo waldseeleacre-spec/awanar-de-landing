@@ -52,7 +52,7 @@ export class Block4 {
             
             <!-- Imagem -->
             <img 
-              src="/images/bloco-04.jpg" 
+              src="/images/bloco-04.png" 
               alt="${i18n.t('hero.imageAlt')}" 
               class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
               onload="this.style.opacity='1'"

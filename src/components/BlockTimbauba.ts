@@ -1,8 +1,8 @@
 import { i18n } from '../i18n';
 
 const aldeiaImages = [
-  "/images/aldeia -01.jpeg",
   "/images/aaldeia 02 .jpeg",
+  "/images/aldeia -01.jpeg",
   "/images/aldeia 03.jpeg",
   "/images/aldeia 04.jpeg"
 ];
